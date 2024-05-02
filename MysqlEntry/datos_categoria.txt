@@ -1,0 +1,6 @@
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Hombres', 'Categoría para productos dirigidos a hombres');
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Mujeres', 'Categoría para productos dirigidos a mujeres');
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Bebés', 'Categoría para productos dirigidos a bebés');
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Accesorios', 'Categoría para accesorios de moda');
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Bolsos', 'Categoría para bolsos y carteras');
+INSERT INTO Categoria (nombreCategoria, descripcion) VALUES ('Calzado', 'Categoría para calzado de moda');

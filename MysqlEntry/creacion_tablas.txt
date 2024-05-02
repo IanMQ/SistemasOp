@@ -1,0 +1,97 @@
+CREATE TABLE Distrito (
+    idDistrito INT AUTO_INCREMENT,
+    nombreDistrito VARCHAR(255),
+    PRIMARY KEY (idDistrito)
+);
+
+CREATE TABLE Urbanizacion (
+    idUrbanizacion INT AUTO_INCREMENT,
+    nombreUrbanizacion VARCHAR(255),
+    idDistrito INT,
+    PRIMARY KEY (idUrbanizacion),
+    FOREIGN KEY (idDistrito) REFERENCES Distrito(idDistrito)
+);
+
+CREATE TABLE Direccion (
+    idDireccion INT AUTO_INCREMENT,
+    nombreDireccion VARCHAR(255),
+    idUrbanizacion INT,
+    PRIMARY KEY (idDireccion),
+    FOREIGN KEY (idUrbanizacion) REFERENCES Urbanizacion(idUrbanizacion)
+);
+
+CREATE TABLE Tienda (
+    idTienda INT AUTO_INCREMENT,
+    nombreTienda VARCHAR(255),
+    idDireccion INT,
+    PRIMARY KEY (idTienda),
+    FOREIGN KEY (idDireccion) REFERENCES Direccion(idDireccion)
+);
+
+CREATE TABLE Categoria (
+    idCategoria INT AUTO_INCREMENT,
+    nombreCategoria VARCHAR(255),
+    descripcion TEXT,
+    PRIMARY KEY (idCategoria)
+);
+
+CREATE TABLE Marca (
+    idMarca INT AUTO_INCREMENT,
+    nombreMarca VARCHAR(255),
+    PRIMARY KEY (idMarca)
+);
+
+CREATE TABLE Producto (
+    idProducto INT AUTO_INCREMENT,
+    descripcion TEXT,
+    color VARCHAR(255),
+    talla VARCHAR(255),
+    idCategoria INT,
+    idMarca INT,
+    PRIMARY KEY (idProducto),
+    FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria),
+    FOREIGN KEY (idMarca) REFERENCES Marca(idMarca)
+);
+
+CREATE TABLE Inventario (
+    idInventario INT AUTO_INCREMENT,
+    cantidad INT,
+    idProducto INT,
+    PRIMARY KEY (idInventario),
+    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto)
+);
+
+CREATE TABLE Cliente (
+    idCliente INT AUTO_INCREMENT,
+    nombre VARCHAR(255),
+    apellidoPaterno VARCHAR(255),
+    apellidoMaterno VARCHAR(255),
+    correo VARCHAR(255),
+    telefono VARCHAR(255),
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    idDireccion INT,
+    PRIMARY KEY (idCliente),
+    FOREIGN KEY (idDireccion) REFERENCES Direccion(idDireccion)
+);
+
+CREATE TABLE Venta (
+    idPedido INT AUTO_INCREMENT,
+    fechaPedido DATE,
+    estadoPedido VARCHAR(255),
+    idCliente INT,
+    PRIMARY KEY (idPedido),
+    FOREIGN KEY (idCliente) REFERENCES Cliente(idCliente)
+);
+
+CREATE TABLE Detalle_Venta (
+    idPedido INT,
+    idProducto INT,
+    cantidad INT,
+    precioUnitario DECIMAL(10, 2),
+    idTienda INT,
+    PRIMARY KEY (idPedido, idProducto),
+    FOREIGN KEY (idPedido) REFERENCES Venta(idPedido),
+    FOREIGN KEY (idProducto) REFERENCES Producto(idProducto),
+    FOREIGN KEY (idTienda) REFERENCES Tienda(idTienda)
+);

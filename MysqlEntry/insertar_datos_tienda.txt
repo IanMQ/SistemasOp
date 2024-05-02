@@ -1,0 +1,22 @@
+-- Obtener un ID de distrito al azar entre 1 y 43
+SET @idDistrito = FLOOR(RAND() * 43) + 1;
+
+-- Verificar si la urbanización ya existe
+INSERT INTO Urbanizacion (nombreUrbanizacion, idDistrito)
+SELECT 'nombre_urbanizacion', @idDistrito
+WHERE NOT EXISTS (SELECT * FROM Urbanizacion WHERE nombreUrbanizacion = 'nombre_urbanizacion');
+
+-- Obtener el ID de la urbanización
+SET @idUrbanizacion = LAST_INSERT_ID();
+
+-- Verificar si la dirección ya existe
+INSERT INTO Direccion (nombreDireccion, idUrbanizacion)
+SELECT 'nombre_direccion', @idUrbanizacion
+WHERE NOT EXISTS (SELECT * FROM Direccion WHERE nombreDireccion = 'nombre_direccion');
+
+-- Obtener el ID de la dirección
+SET @idDireccion = LAST_INSERT_ID();
+
+-- Insertar la tienda
+INSERT INTO Tienda (nombreTienda, idDireccion)
+VALUES ('nombre_tienda', @idDireccion);

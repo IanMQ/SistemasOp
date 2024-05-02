@@ -1,0 +1,9 @@
+INSERT INTO Marca (nombreMarca) VALUES ('Máximo Store');
+INSERT INTO Marca (nombreMarca) VALUES ('Pionier');
+INSERT INTO Marca (nombreMarca) VALUES ('H%M');
+INSERT INTO Marca (nombreMarca) VALUES ('Zara');
+INSERT INTO Marca (nombreMarca) VALUES ('FINA');
+INSERT INTO Marca (nombreMarca) VALUES ('CHIC');
+INSERT INTO Marca (nombreMarca) VALUES ('Adams');
+INSERT INTO Marca (nombreMarca) VALUES ('Carolina');
+INSERT INTO Marca (nombreMarca) VALUES ('Tutula');
