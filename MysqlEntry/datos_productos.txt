@@ -1,0 +1,54 @@
+-- Insertar 5 productos para cada categoría y marca
+-- Categoría 1: Ropa de Hombre
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Camisa de algodón', 'Azul', 'L', 1, 1),
+('Pantalones vaqueros', 'Negro', '32', 1, 2),
+('Chaqueta de cuero', 'Marrón', 'XL', 1, 3),
+('Corbata de seda', 'Rojo', 'Única', 1, 4),
+('Jersey de lana', 'Gris', 'M', 1, 5);
+
+-- Categoría 2: Ropa de Mujer
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Vestido de verano', 'Rosa', 'M', 2, 6),
+('Falda plisada', 'Negro', 'S', 2, 7),
+('Blusa de encaje', 'Blanco', 'L', 2, 8),
+('Pantalones cortos', 'Azul', 'XS', 2, 9),
+('Abrigo de invierno', 'Gris', 'M', 2, 1);
+
+-- Categoría 3: Calzado
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Zapatillas deportivas', 'Blanco', '42', 3, 2),
+('Botas de montaña', 'Marrón', '39', 3, 3),
+('Zapatos de vestir', 'Negro', '41', 3, 4),
+('Sandalias de verano', 'Marrón', '38', 3, 5),
+('Zapatillas de casa', 'Gris', '39', 3, 6);
+
+-- Categoría 4: Accesorios
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Bolso de mano', 'Negro', 'Único', 4, 7),
+('Gafas de sol', 'Negro', 'Único', 4, 8),
+('Bufanda de lana', 'Rojo', 'Única', 4, 9),
+('Cinturón de cuero', 'Marrón', 'M', 4, 1),
+('Sombrero de paja', 'Beige', 'Único', 4, 2);
+
+-- Categoría 5: Electrónica
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Smartphone', 'Negro', 'Único', 5, 3),
+('Portátil', 'Plata', 'Único', 5, 4),
+('Auriculares inalámbricos', 'Blanco', 'Único', 5, 5),
+('Tableta', 'Gris', 'Único', 5, 6),
+('Altavoz Bluetooth', 'Negro', 'Único', 5, 7);
+
+-- Categoría 6: Hogar
+INSERT INTO Producto (descripcion, color, talla, idCategoria, idMarca)
+VALUES 
+('Juego de sábanas', 'Blanco', 'Queen', 6, 8),
+('Toallas de baño', 'Azul', 'Único', 6, 9),
+('Jarrón decorativo', 'Transparente', 'Único', 6, 1),
+('Lámpara de mesa', 'Negro', 'Único', 6, 2),
+('Set de cocina', 'Acero inoxidable', 'Único', 6, 3);
