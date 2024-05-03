@@ -52,6 +52,9 @@ CREATE TABLE Producto (
     FOREIGN KEY (idCategoria) REFERENCES Categoria(idCategoria),
     FOREIGN KEY (idMarca) REFERENCES Marca(idMarca)
 );
+ALTER TABLE Producto
+ADD imagen VARCHAR(255);
+
 
 CREATE TABLE Inventario (
     idInventario INT AUTO_INCREMENT,

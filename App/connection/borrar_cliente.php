@@ -1,12 +1,5 @@
 <?php
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "test";
-
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
+include("connection.php");
 $conn->set_charset("utf8");
 
 if (!empty($_GET["id"])) {

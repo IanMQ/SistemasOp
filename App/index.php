@@ -1,3 +1,12 @@
+<?php
+include("connection/connection.php");
+$conn->set_charset("utf8");
+
+if (!empty($_GET["id"])) {
+    $idCliente = $_GET["id"];
+}
+?>
+
 <html lang="en"><head>
     <meta charset="utf-8">
     <title>EShopper - Bootstrap Shop Template</title>
@@ -50,16 +59,16 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-                <a href="index.html" class="nav-item nav-link active">Inicio</a>                
+                <a href="index.php?id=<?php echo $idCliente; ?>" class="nav-item nav-link active">Inicio</a>                
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Comprar</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="#" class="dropdown-item">Sección Hombres</a>
-                        <a href="#" class="dropdown-item">Sección Mujer</a>
-                        <a href="#" class="dropdown-item">Sección Bebés</a>
-                        <a href="#" class="dropdown-item">Accesorios</a>
-                        <a href="#" class="dropdown-item">Bolsos</a>
-                        <a href="#" class="dropdown-item">Calzado</a>
+                        <a href="Pages/sec-men.php?id=<?php echo $idCliente; ?>&men" class="dropdown-item">Sección Hombres</a>
+                        <a href="Pages/sec-women.php?id=<?php echo $idCliente; ?>&women" class="dropdown-item">Sección Mujer</a>
+                        <a href="Pages/sec-bb.php?id=<?php echo $idCliente; ?>&bb" class="dropdown-item">Sección Bebés</a>
+                        <a href="Pages/sec-acces.php?id=<?php echo $idCliente; ?>&acces" class="dropdown-item">Accesorios</a>
+                        <a href="Pages/sec-bags.php?id=<?php echo $idCliente; ?>&bags" class="dropdown-item">Bolsos</a>
+                        <a href="Pages/sec-shoes.php?id=<?php echo $idCliente; ?>&shoes" class="dropdown-item">Calzado</a>
                     </div>
                 </div>                
             </div>

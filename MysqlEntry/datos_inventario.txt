@@ -1,0 +1,23 @@
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 1;
+
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 2;
+
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 3;
+
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 4;
+
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 5;
+
+-- Insertar registros en la tabla de Inventario
+INSERT INTO Inventario (cantidad, idProducto)
+SELECT FLOOR(RAND() * 20) + 1, idProducto FROM Producto WHERE idCategoria = 6;
